@@ -52,14 +52,16 @@ namespace QRCODE
                 bm = qrCodeEncoder.Encode(str, Encoding.UTF8);
 
                 bm.Save(filePath + "原文字.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                #region base64解码 示例
-
-                //base64解码 示例
-                string strPath = "5om55qyhOjEwOTE5MeacieaViOacnzoyMDE2LzIvMjbnga3oj4zml6XmnJ86MjAxNi8xMi8zMeS8geS4mueggToxMTExMTExMTExMTExMTM0NDQ0NDQ0NDQ0NTU1NTU1NQ==";
-                byte[] bpath = Convert.FromBase64String(strPath);
-                strPath = System.Text.Encoding.UTF8.GetString(bpath);
 
                 bm.Dispose();
+                #region base64解码 示例
+
+                //  //base64解码 示例
+                //string strPath = "5om55qyhOjEwOTE5MeacieaViOacnzoyMDE2LzIvMjbnga3oj4zml6XmnJ86MjAxNi8xMi8zMeS8geS4mueggToxMTExMTExMTExMTExMTM0NDQ0NDQ0NDQ0NTU1NTU1NQ==";
+                //byte[] bpath = Convert.FromBase64String(strPath);
+                //strPath = System.Text.Encoding.UTF8.GetString(bpath);
+
+
                 #endregion
 
 
@@ -89,7 +91,7 @@ namespace QRCODE
 
 
                 string decodeStr = qrCodeDecoder.decode(new ThoughtWorks.QRCode.Codec.Data.QRCodeBitmapImage(bm));
-             
+
                 byte[] bpath = Convert.FromBase64String(decodeStr);
                 decodeStr = System.Text.ASCIIEncoding.UTF8.GetString(bpath);
                 img.Dispose();
